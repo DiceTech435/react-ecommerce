@@ -1,11 +1,12 @@
-import "./ordersPage.css";
 import { Header } from "../components/Header";
+import "./OrdersPage.css";
 
 export function OrdersPage() {
   return (
     <>
-      <Header />
+      <title>Orders</title>
 
+      <Header />
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
 
@@ -52,7 +53,7 @@ export function OrdersPage() {
               </div>
 
               <div className="product-actions">
-                <a href="tracking.html">
+                <a href="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
@@ -81,7 +82,7 @@ export function OrdersPage() {
               </div>
 
               <div className="product-actions">
-                <a href="tracking.html">
+                <a href="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
@@ -130,7 +131,7 @@ export function OrdersPage() {
               </div>
 
               <div className="product-actions">
-                <a href="tracking.html">
+                <a href="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
