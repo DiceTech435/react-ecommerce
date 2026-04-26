@@ -1,5 +1,5 @@
-import { Header } from "../components/Header";
-import "./trackingPage.css";
+import { Header } from '../components/Header';
+import './trackingPage.css';
 
 export function TrackingPage() {
   return (
