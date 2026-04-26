@@ -1,20 +1,27 @@
-import { Header } from "../components/Header";
-import { products } from "../../data/products";
-import "./HomePage.css";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Header } from '../components/Header';
+// import { products } from '../../data/products';
+import { formatMoney } from '../utils/money';
+import './HomePage.css';
 
-export function HomePage() {
-  fetch(`http://localhost:3000/api/products`)
-    .then((response) => {
-      return response.json();
-    }).then((data) => {
-        console.log(data);
-    });
+export function HomePage({ cart }) {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/products')
+      .then((response) => {
+        setProducts(response.data);
+      });
+
+    document.title = "Ecommerce Project";
+  }, []);
 
   return (
     <>
       <title>Ecommerce Project</title>
 
-      <Header />
+      <Header cart={cart} />
       <div className="home-page">
         <div className="products-grid">
           {products.map((product) => {
@@ -24,6 +31,7 @@ export function HomePage() {
                   <img
                     className="product-image"
                     src={product.image}
+                    alt={product.name}
                   />
                 </div>
 
@@ -36,10 +44,14 @@ export function HomePage() {
                     className="product-rating-stars"
                     src={`images/ratings/rating-${product.rating.stars * 10}.png`}
                   />
-                  <div className="product-rating-count link-primary">{product.rating.count}</div>
+                  <div className="product-rating-count link-primary">
+                    {product.rating.count}
+                  </div>
                 </div>
 
-                <div className="product-price">{(product.priceCents / 100).toFixed(2)}</div>
+                <div className="product-price">
+                  {formatMoney(product.priceCents)}
+                </div>
 
                 <div className="product-quantity-container">
                   <select>
