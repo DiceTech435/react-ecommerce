@@ -152,7 +152,6 @@
 }
 
 .checkout-page .delivery-option-date {
-
   font-weight: 500;
   margin-bottom: 3px;
 }
@@ -192,7 +191,7 @@
 }
 
 .checkout-page .total-row {
-  color: rgb(25, 135, 84);
+  color: rgb(25, 84, 135);
   font-weight: 700;
   font-size: 18px;
 
