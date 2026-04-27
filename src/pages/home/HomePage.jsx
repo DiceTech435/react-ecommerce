@@ -14,7 +14,7 @@ export function HomePage({ cart }) {
       setProducts(response.data);
     };
     getHomeData();
-    
+
     document.title = "Ecommerce Project";
   }, []);
 
