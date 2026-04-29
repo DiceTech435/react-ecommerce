@@ -6,8 +6,8 @@ export function OrderSummary({ cart, deliveryOptions }) {
   return (
     <>
       <div className="order-summary">
-        {deliveryOptions.length > 0 &&
-          cart.map((cartItem) => {
+        {deliveryOptions?.length > 0 &&
+          cart?.map((cartItem) => {
             const selectedDeliveryOption = deliveryOptions.find(
               (deliveryOption) => {
                 return deliveryOption.id === cartItem.deliveryOptionId;
@@ -17,14 +17,18 @@ export function OrderSummary({ cart, deliveryOptions }) {
             return (
               <div key={cartItem.productId} className="cart-item-container">
                 <div className="delivery-date">
-                  Delivery date:{" "}
-                  {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format(
-                    "dddd, MMMM D",
-                  )}
+                  Delivery date:
+                  {dayjs(
+                    selectedDeliveryOption?.estimatedDeliveryTimeMs,
+                  ).format("dddd, MMMM D")}
                 </div>
 
                 <div className="cart-item-details-grid">
-                  <img className="product-image" src={cartItem.product.image} />
+                  <img
+                    className="product-image"
+                    src={cartItem.product.image}
+                    alt={cartItem.product.name}
+                  />
 
                   <div className="cart-item-details">
                     <div className="product-name">{cartItem.product.name}</div>
@@ -47,7 +51,10 @@ export function OrderSummary({ cart, deliveryOptions }) {
                     </div>
                   </div>
 
-                  <DeliveryOptions cartItem={cartItem} deliveryOptions={deliveryOptions}/>
+                  <DeliveryOptions
+                    cartItem={cartItem}
+                    deliveryOptions={deliveryOptions}
+                  />
                 </div>
               </div>
             );

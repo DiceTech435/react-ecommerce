@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import { formatMoney } from "../../../utils/money";
 
-
 export function DeliveryOptions({ cartItem, deliveryOptions }) {
   return (
     <>
@@ -33,7 +32,6 @@ export function DeliveryOptions({ cartItem, deliveryOptions }) {
             </div>
           );
         })}
-        ;
       </div>
     </>
   );

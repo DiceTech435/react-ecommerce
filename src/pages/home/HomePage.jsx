@@ -1,8 +1,11 @@
+// Libraries
 import axios from "axios";
+// React
 import { useEffect, useState } from "react";
+// Components
 import { Header } from "../../components/Header";
-// import { products } from '../../data/products';
 import { ProductGrid } from "./ProductGrid";
+// Styles
 import "./HomePage.css";
 
 export function HomePage({ cart }) {

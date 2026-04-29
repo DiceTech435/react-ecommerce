@@ -26,7 +26,7 @@ export function OrdersPage({ cart }) {
         <div className="page-title">Your Orders</div>
 
         <div className="orders-grid">
-          {orders.map((order) => {
+          {orders?.map((order) => {
             return (
               <div key={order.id} className="order-container">
                 <div className="order-header">
@@ -48,7 +48,7 @@ export function OrdersPage({ cart }) {
                 </div>
 
                 <div className="order-details-grid">
-                  {orders.products.map((orderProduct) => {
+                  {order.products.map((orderProduct) => {
                     return (
                       <Fragment key={orderProduct.product.id}>
                         <div className="product-image-container">
@@ -60,9 +60,7 @@ export function OrdersPage({ cart }) {
                             {orderProduct.product.name}
                           </div>
                           <div className="product-delivery-date">
-                            Arriving on:{" "}
-                            {dayjs
-                              .Dayjs(orderProduct.estimatedDeliveryTimeMs)
+                            Arriving on: {dayjs(orderProduct.estimatedDeliveryTimeMs)
                               .format("MMMM D")}
                           </div>
                           <div className="product-quantity">
