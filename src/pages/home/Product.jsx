@@ -12,6 +12,7 @@ export function Product({ product, loadCart }) {
       //   quantity: quantity,
       quantity,
     });
+    
     setAddMessage("Added to cart");
 
     setTimeout(() => {
