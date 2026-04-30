@@ -29,7 +29,7 @@ export function Product({ product, loadCart }) {
 
   return (
     <>
-      <div className="product-container">
+      <div className="product-container" data-testid="product-container">
         <div className="product-image-container">
           <img
             className="product-image"
@@ -71,7 +71,7 @@ export function Product({ product, loadCart }) {
 
         <div className="product-spacer"></div>
 
-        <div className={`added-to-cart ${addMessage ? 'show' : ''}`}>
+        <div className={`added-to-cart ${addMessage ? "show" : ""}`}>
           <img src="images/icons/checkmark.png" />
           {addMessage}
         </div>
